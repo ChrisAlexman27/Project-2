@@ -19,6 +19,8 @@ public:
     
     int getScore();             //get the score, accessor function
     
+    void experience();      //determine experience level of player
+    
     void results();             //print the results
     
 };

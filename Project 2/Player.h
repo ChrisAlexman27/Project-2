@@ -14,11 +14,12 @@ protected:                  //protected for the derived class
     int exp;                //the experience of the player
     
 public:  
+    Player();               //default constructor
+    
     void setExp(int e);     //set the experience, mutator function
     
     int getExp() const;     //get the experience, accessor function
     
-    void experience();      //determine experience level of player
 };
 
 #endif /* PLAYER_H */

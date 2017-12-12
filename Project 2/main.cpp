@@ -15,14 +15,13 @@
 int main()
 {
     Game play;                //player is an instance of the game class
-    Player character;         //character is an instance of the Player class
     HighScore result;         //result is an instance of the HighScore class
     Name test1(100);          //test1 sends over the value 100
     Name test2(50);           //test2 sends over the value 50
     
     intro();                    //call intro function, outputs instructions
     
-    character.experience();     //get experience level of the player
+    result.experience();     //get experience level of the player
 
     play.usrInput();          //get user input for width, length, and bombs
     
@@ -96,9 +95,9 @@ void intro()
 //******************************************************************************
 void output(Name n)
 {
-    cout << "\n\nHere is an overloaded = operator:\n";
+    cout << "\nHere is an overloaded = operator:\n";
     cout << "I will say this two times:\n";
-    cout << "I want to get " << n.getGrade() << "% on Project 2.";
+    cout << "I want to get " << n.getGrade() << "% on Project 2.\n";
     
 }
 
@@ -138,8 +137,8 @@ void minigame()
         }
     }   
     
-    cout << "\n\nYOU WILL NOW PLAY A MINESWEEPER MINI GAME\n";
-    cout << "In this row of 64 spots there are 10 mines, represented as 2s. ";
+    cout << "\n\nYOU WILL NOW PLAY A MINESWEEPER MINI GAME\n\n";
+    cout << "In this row of 64 spots there are 10 mines, represented as 2s.\n";
     cout << "Try to find 10 of the 54 total safe spots, represented as 1s.";
     
     int found = 0;          //the number of mines found
@@ -153,8 +152,10 @@ void minigame()
         for(int count = 0; count < 64; count++)     //output the 0s vector
             cout << zeroTable[count] << " ";
         
-        cout << "\nYour guess(0-63): ";
+        cout << "\nYour guess(1-64): ";
         cin >> guess;                       //get guess from user
+        
+        guess -= 1;         //to prevent the 1 off error
         
         if(intTable[guess] == 1)            //if it is a 1, it is safe
         {
